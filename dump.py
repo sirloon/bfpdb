@@ -11,7 +11,7 @@ import biothings.hub.dataload.dumper
 
 class BfpdbDumper(biothings.hub.dataload.dumper.LastModifiedHTTPDumper):
 
-    SRC_NAME = "bfpdb"
+    SRC_NAME = "foodDBv2"
     SRC_ROOT_FOLDER = os.path.join(DATA_ARCHIVE_ROOT, SRC_NAME)
     SCHEDULE = None
     UNCOMPRESS = True
