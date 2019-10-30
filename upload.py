@@ -8,7 +8,7 @@ from .parser import load_data_products, load_data_nutrients, load_data_sizes
 
 class BfpdbProductsUploader(biothings.hub.dataload.uploader.BaseSourceUploader):
 
-    main_source = "bfpdb"
+    main_source = "foodDBv2"
     name = "products"
     __metadata__ = {"src_meta": {}}
     idconverter = None
@@ -51,7 +51,7 @@ class BfpdbProductsUploader(biothings.hub.dataload.uploader.BaseSourceUploader):
 
 class BfpdbNutrientsUploader(biothings.hub.dataload.uploader.BaseSourceUploader):
 
-    main_source = "bfpdb"
+    main_source = "foodDBv2"
     name = "nutrients"
     __metadata__ = {"src_meta": {}}
     idconverter = None
@@ -67,7 +67,7 @@ class BfpdbNutrientsUploader(biothings.hub.dataload.uploader.BaseSourceUploader)
 
 class BfpdbServingSizesUploader(biothings.hub.dataload.uploader.BaseSourceUploader):
 
-    main_source = "bfpdb"
+    main_source = "foodDBv2"
     name = "serving_sizes"
     __metadata__ = {"src_meta": {}}
     idconverter = None
