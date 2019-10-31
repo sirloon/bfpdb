@@ -20,7 +20,6 @@ def load_data_nutrients(data_folder):
     assert os.path.exists(products_file)
     dat = pandas.read_csv(products_file,squeeze=True).to_dict(orient='records')
     combined = {"nutrients" : [], "_id" : str(dat[0]["NDB_No"])}
-    print(combined)
     for rec in dat:
         recid = str(rec["NDB_No"])
 
@@ -45,6 +44,8 @@ def load_data_sizes(data_folder):
     dat = pandas.read_csv(products_file,squeeze=True).to_dict(orient='records')
     for rec in dat:
         rec["_id"] = str(rec.pop("NDB_No"))
+        rec["Serving_Size"] = str(rec["Serving_Size"])
+        rec["Serving_Size_UOM"] = str(rec["Serving_Size_UOM"])
         rec["Household_Serving_Size_UOM"] = str(rec["Household_Serving_Size_UOM"])
         rec["Household_Serving_Size"] = str(rec["Household_Serving_Size"])
         rec = dict_sweep(rec,vals=["none","nan"])
