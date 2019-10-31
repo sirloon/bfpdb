@@ -1,4 +1,6 @@
 import os, pandas
+import math
+from biothings.utils.dataload import dict_sweep
 
 
 def load_data_products(data_folder):
@@ -44,6 +46,9 @@ def load_data_sizes(data_folder):
     for rec in dat:
         rec["_id"] = str(rec.pop("NDB_No"))
         rec["Household_Serving_Size_UOM"] = str(rec["Household_Serving_Size_UOM"])
+        rec["Household_Serving_Size"] = str(rec["Household_Serving_Size"])
+        rec = dict_sweep(rec,vals=["none","nan"])
+        rec.pop("Preparation_State")
         yield rec
 
 
